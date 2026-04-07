@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-brand-pink: #EC4899;
+  --color-brand-purple: #A855F7;
+  --color-brand-pink-soft: #E09AB8;
+  --color-brand-purple-soft: #A88BC9;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+body,
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #e5e7eb;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d1d5db;
+}
