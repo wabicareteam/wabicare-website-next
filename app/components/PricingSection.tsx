@@ -4,7 +4,6 @@ const tiers = [
   {
     tier: "Tier 01",
     name: "Solo Clinician",
-    price: "$149",
     features: [
       { text: "Single Provider License", active: true },
       { text: "HIPAA Cloud Storage", active: true },
@@ -17,7 +16,6 @@ const tiers = [
   {
     tier: "Tier 02",
     name: "Small Team",
-    price: "$429",
     features: [
       { text: "Up to 5 Providers", active: true },
       { text: "Priority Support Queue", active: true },
@@ -30,7 +28,6 @@ const tiers = [
   {
     tier: "Tier 03",
     name: "Enterprise",
-    price: "Custom",
     features: [
       { text: "Unlimited Providers", active: true },
       { text: "Custom EHR Integration", active: true },
@@ -46,7 +43,7 @@ export default function PricingSection() {
   return (
     <section
       id="pricing"
-      className="py-32 px-8 md:px-12 border-t border-gray-100 bg-white"
+      className="py-32 px-8 md:px-12 border-t border-gray-100 bg-[#FAFAFA]"
     >
       <div className="max-w-6xl mx-auto w-full flex flex-col items-center">
         <div className="text-center mb-20 pointer-events-none w-full">

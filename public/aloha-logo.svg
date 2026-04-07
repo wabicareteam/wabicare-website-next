@@ -1,0 +1,71 @@
+<svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sunGradient" x1="60" y1="8" x2="60" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="hsl(320,80%,65%)" />
+      <stop offset="40%" stop-color="hsl(30,90%,75%)" />
+      <stop offset="100%" stop-color="hsl(185,85%,55%)" />
+    </linearGradient>
+    <linearGradient id="waterGradient" x1="60" y1="52" x2="60" y2="68" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="hsl(185,85%,55%)" />
+      <stop offset="100%" stop-color="hsl(300,70%,60%)" />
+    </linearGradient>
+    <linearGradient id="islandGradient" x1="60" y1="35" x2="60" y2="55" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="hsl(185,85%,55%)" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="hsl(270,60%,35%)" stop-opacity="0.7" />
+    </linearGradient>
+    <linearGradient id="shimmerTextGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="hsl(320,80%,65%)">
+        <animate attributeName="offset" values="0;1;0" dur="3s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="50%" stop-color="hsl(280,70%,60%)">
+        <animate attributeName="offset" values="0.5;1.5;0.5" dur="3s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="hsl(180,70%,60%)">
+        <animate attributeName="offset" values="1;2;1" dur="3s" repeatCount="indefinite" />
+      </stop>
+      <animateTransform attributeName="gradientTransform" type="translate" values="-1 0; 1 0; -1 0" dur="2s" repeatCount="indefinite" />
+    </linearGradient>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="hsl(270,60%,35%)" flood-opacity="0.35" />
+    </filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="hsl(320,80%,65%)" flood-opacity="0.75" />
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="hsl(270,60%,35%)" flood-opacity="0.35" />
+    </filter>
+  </defs>
+  <circle cx="60" cy="32" r="24" fill="url(#sunGradient)" />
+  <g opacity="0.18">
+    <rect x="36" y="28" width="48" height="2" fill="hsl(270,50%,25%)" />
+    <rect x="36" y="34" width="48" height="2" fill="hsl(270,50%,25%)" />
+    <rect x="36" y="40" width="48" height="2" fill="hsl(270,50%,25%)" />
+    <rect x="36" y="46" width="48" height="1.5" fill="hsl(270,50%,25%)" />
+  </g>
+  <polygon points="50,52 60,30 70,52" fill="hsl(270,60%,35%)" opacity="0.85" />
+  <ellipse cx="60" cy="52" rx="22" ry="6" fill="url(#islandGradient)" opacity="0.7" />
+  <g filter="url(#softShadow)">
+    <g transform="translate(28, 24) scale(1.4) rotate(-15, 5, 20)" fill="hsl(270,60%,35%)">
+      <rect x="3" y="6" width="4" height="20" rx="2" />
+      <path d="M5,6 Q-4,-2 -7,4 Q-1,2 5,6" />
+      <path d="M5,6 Q2,-4 10,0 Q6,2 5,6" />
+      <path d="M5,6 Q14,-2 18,4 Q12,2 5,6" />
+      <path d="M5,8 Q-6,4 -9,10 Q-2,6 5,8" />
+      <path d="M5,8 Q16,4 19,10 Q12,6 5,8" />
+    </g>
+    <g transform="translate(80, 22) scale(1.4) rotate(15, 5, 20)" fill="hsl(270,60%,35%)">
+      <rect x="3" y="6" width="4" height="22" rx="2" />
+      <path d="M5,6 Q-4,-2 -7,4 Q-1,2 5,6" />
+      <path d="M5,6 Q2,-4 10,0 Q6,2 5,6" />
+      <path d="M5,6 Q14,-2 18,4 Q12,2 5,6" />
+      <path d="M5,8 Q-6,4 -9,10 Q-2,6 5,8" />
+      <path d="M5,8 Q16,4 19,10 Q12,6 5,8" />
+    </g>
+  </g>
+  <g opacity="0.75" filter="url(#softShadow)">
+    <rect x="42" y="56" width="36" height="1.6" rx="0.8" fill="url(#waterGradient)" />
+    <rect x="48" y="60" width="24" height="1.1" rx="0.55" fill="url(#waterGradient)" />
+    <rect x="52" y="63" width="16" height="0.9" rx="0.45" fill="url(#waterGradient)" />
+  </g>
+  <text x="60" y="51" text-anchor="middle" font-family="'Brush Script MT', 'Segoe Script', cursive" font-size="30" font-weight="700" fill="white" stroke="hsl(270,60%,35%)" stroke-opacity="0.55" stroke-width="6" paint-order="stroke" filter="url(#glow)">Aloha</text>
+  <text x="60" y="51" text-anchor="middle" font-family="'Brush Script MT', 'Segoe Script', cursive" font-size="30" font-weight="700" fill="white" stroke="hsl(320,80%,65%)" stroke-width="2.2" paint-order="stroke" filter="url(#glow)">Aloha</text>
+  <text x="60" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="800" letter-spacing="2.5" fill="url(#shimmerTextGradient)">ABA THERAPY</text>
+</svg>

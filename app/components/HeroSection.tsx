@@ -12,9 +12,9 @@ export default function HeroSection() {
         </p>
       </div>
 
-      <button className="pointer-events-auto px-10 py-5 text-[10px] uppercase tracking-[0.2em] font-bold bg-gradient-to-r from-brand-pink to-brand-purple text-white rounded-md transition-all duration-300 shadow-[0_6px_16px_rgba(0,0,0,0.1),0_2px_6px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_20px_-4px_rgba(168,139,201,0.4)] hover:scale-[1.02]">
+      <a href="#contact" className="pointer-events-auto px-10 py-5 text-[10px] uppercase tracking-[0.2em] font-bold bg-gradient-to-r from-brand-pink to-brand-purple text-white rounded-md transition-all duration-300 shadow-[0_6px_16px_rgba(0,0,0,0.1),0_2px_6px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_20px_-4px_rgba(168,139,201,0.4)] hover:scale-[1.02]">
         Request Priority Access
-      </button>
+      </a>
 
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 text-black/40 animate-pulse pointer-events-none">
         <span className="text-[8px] font-semibold uppercase tracking-[0.3em]">

@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer
       id="security"
-      className="py-12 px-8 md:px-12 border-t border-gray-100 bg-white"
+      className="py-12 px-8 md:px-12 border-t border-gray-100 bg-[#FAFAFA]"
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center text-center md:text-left gap-12 md:gap-0">
         <div className="font-mono text-[9px] text-black/50 leading-[1.8] uppercase tracking-[0.05em] font-medium">

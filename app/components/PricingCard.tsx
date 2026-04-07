@@ -1,7 +1,6 @@
 interface PricingCardProps {
   tier: string;
   name: string;
-  price: string;
   features: { text: string; active: boolean }[];
   cta: string;
   featured: boolean;
@@ -10,7 +9,6 @@ interface PricingCardProps {
 export default function PricingCard({
   tier,
   name,
-  price,
   features,
   cta,
   featured,
@@ -52,21 +50,6 @@ export default function PricingCard({
           </h3>
         </div>
 
-        <div className="mb-10">
-          <span
-            className={`text-4xl font-serif font-semibold text-black ${
-              price === "Custom" ? "lowercase" : ""
-            }`}
-          >
-            {price}
-          </span>
-          {price !== "Custom" && (
-            <span className="text-[10px] font-bold uppercase tracking-tighter text-black/40 ml-2">
-              / Month
-            </span>
-          )}
-        </div>
-
         <ul className="flex-grow space-y-4 mb-12 text-[11px] font-semibold uppercase tracking-wider text-black/70">
           {features.map((f) => (
             <li
@@ -87,9 +70,9 @@ export default function PricingCard({
           ))}
         </ul>
 
-        <button className="w-full py-4 text-[10px] uppercase tracking-[0.2em] font-bold text-white rounded-md bg-gradient-to-r from-brand-pink to-brand-purple transition-all duration-300 shadow-md hover:shadow-[0_8px_20px_-4px_rgba(168,139,201,0.4)] hover:scale-[1.02]">
+        <a href="#contact" className="block w-full py-4 text-[10px] text-center uppercase tracking-[0.2em] font-bold text-white rounded-md bg-gradient-to-r from-brand-pink to-brand-purple transition-all duration-300 shadow-md hover:shadow-[0_8px_20px_-4px_rgba(168,139,201,0.4)] hover:scale-[1.02]">
           {cta}
-        </button>
+        </a>
       </div>
     </div>
   );

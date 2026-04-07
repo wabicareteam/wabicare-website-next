@@ -1,4 +1,5 @@
 import FeatureCard from "./FeatureCard";
+import DashboardPreview from "./DashboardPreview";
 import {
   CalendarIcon,
   ChartIcon,
@@ -37,17 +38,26 @@ export default function FeaturesSection() {
   return (
     <section
       id="features"
-      className="py-32 px-8 md:px-12 border-t border-gray-100 bg-[#F5F5F5]"
+      className="py-32 px-8 md:px-12 border-t border-gray-100 bg-[#FAFAFA]"
     >
       <div className="max-w-6xl mx-auto w-full">
-        <div className="mb-20">
-          <div className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-black/50 flex items-center gap-4 mb-6">
+        <div className="mb-16 text-center">
+          <div className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-black/50 flex justify-center items-center gap-4 mb-6">
             <span className="w-8 h-px bg-black/20" />
             System Modules
+            <span className="w-8 h-px bg-black/20" />
           </div>
-          <h2 className="font-serif text-4xl md:text-5xl font-light lowercase text-black">
+          <h2 className="font-serif text-4xl md:text-5xl font-light lowercase text-black mb-4">
             Clinical Operations
           </h2>
+          <p className="font-mono text-[10px] font-medium uppercase tracking-wider text-black/40 leading-loose max-w-lg mx-auto">
+            A single pane of glass for your entire practice — from patient intake to billing.
+          </p>
+        </div>
+
+        {/* Dashboard preview */}
+        <div className="mb-20">
+          <DashboardPreview />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pointer-events-auto">

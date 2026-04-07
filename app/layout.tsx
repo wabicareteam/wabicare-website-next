@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-serif",
@@ -18,7 +20,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "WabiCare — Health OS",
+  title: "WabiCare — Therapy OS",
   description: "Intelligent ABA practice management. Harmonizing patient care.",
 };
 
@@ -30,7 +32,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${cormorant.variable} ${jetbrains.variable}`}>
       <body className="w-full min-h-screen bg-[#FAFAFA] text-black m-0 p-0 font-mono flex flex-col relative">
-        {children}
+        <div className="relative z-10 w-full flex-grow flex flex-col">
+          <Header />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
