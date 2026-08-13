@@ -16,13 +16,13 @@ const workflows = [
     icon: <CalendarIcon />,
     title: "Session Scheduling",
     description:
-      "Intelligent calendar matrices with automated conflict resolution and guardian synchronization across providers.",
+      "Manage provider schedules, appointments, and session coordination with guardian visibility across your practice.",
   },
   {
     icon: <ChartIcon />,
     title: "Data Collection",
     description:
-      "Real-time skill acquisition tracking, DTT, task analysis, and behavior reduction with offline-first architecture.",
+      "Real-time skill acquisition tracking with DTT, task analysis, frequency, duration, interval, and ABC recording.",
   },
   {
     icon: <DollarIcon />,
@@ -40,21 +40,25 @@ const workflows = [
     icon: <ShieldIcon />,
     title: "Assessments",
     description:
-      "Standardized VB-MAPP, ABLLS-R, and FBA assessments with automated scoring and progress visualization.",
+      "Dynamic assessment management with BCBA queue support, scoring workflows, and progress tracking.",
   },
   {
     icon: <PulseIcon />,
-    title: "Telehealth",
+    title: "Telehealth Scheduling",
     description:
-      "HIPAA-compliant video sessions with integrated data collection, enabling remote supervision and parent training.",
+      "Schedule and manage telehealth sessions with status tracking for remote supervision and parent training.",
   },
 ];
 
+// Countable product facts, not outcome claims. An earlier build published
+// invented metrics ("68% reduction in billing errors", "4.2h saved per
+// clinician per week", "99.9% platform uptime") — do not reintroduce numbers
+// we cannot evidence. Real customer outcomes belong in a named case study.
 const metrics = [
-  { value: "68%", label: "reduction in billing errors" },
-  { value: "4.2h", label: "saved per clinician per week" },
-  { value: "99.9%", label: "platform uptime" },
-  { value: "2min", label: "average session note completion" },
+  { value: "11", label: "data collection methods" },
+  { value: "27", label: "integrated API services" },
+  { value: "50+", label: "clinical screens" },
+  { value: "1-click", label: "session to claim conversion" },
 ];
 
 export default function ClinicsPage() {
@@ -84,7 +88,7 @@ export default function ClinicsPage() {
       <section className="py-32 px-8 md:px-12 border-t border-gray-100 bg-[#FAFAFA]">
         <div className="max-w-5xl mx-auto">
           <div className="mb-20">
-            <SectionHeader label="Measured Impact" title="Outcomes That Matter" centered />
+            <SectionHeader label="Platform Scale" title="Built for Clinical Depth" centered />
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
             {metrics.map((m) => (
@@ -111,7 +115,7 @@ export default function ClinicsPage() {
             ready to streamline your clinic?
           </h2>
           <p className="font-mono text-[10px] font-medium uppercase tracking-wider text-black/60 leading-loose mb-12">
-            Join 1,000+ ABA providers already using WabiCare to deliver better outcomes with less administrative burden.
+            Join ABA providers already using WabiCare to deliver better outcomes with less administrative burden.
           </p>
           <GradientButton href="/">Request Priority Access</GradientButton>
         </div>

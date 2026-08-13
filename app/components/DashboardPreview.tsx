@@ -97,6 +97,17 @@ const stats = [
 ];
 
 const patients = ["A.M.", "S.K.", "J.R."];
+
+// The live build added a phone-sized companion to the desktop mock, with
+// condensed stat captions and an app-style bottom nav.
+const mobileStats = [
+  { label: "Active Patients", value: "24", sub: "Enrolled" },
+  { label: "Today\u2019s Sessions", value: "8", sub: "Scheduled" },
+  { label: "Pending Intakes", value: "3", sub: "Processing" },
+  { label: "Hours This Week", value: "32.5", sub: "Billed" },
+];
+
+const mobileNav = ["Home", "Patients", "Sessions", "Schedule", "Reports"];
 const schedule = ["9:00 AM", "10:30 AM", "1:00 PM"];
 
 export default function DashboardPreview() {
@@ -290,6 +301,75 @@ export default function DashboardPreview() {
 
         {/* Fade overlay at bottom */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FAFAFA] to-transparent pointer-events-none" />
+      </div>
+
+      {/* Mobile companion — the same practice, in a clinician's hand */}
+      <div className="mt-10 flex justify-center md:mt-14">
+        <div className="w-[280px] rounded-[2rem] border border-gray-200/70 bg-white shadow-[0_20px_60px_-20px_rgba(0,0,0,0.25)] overflow-hidden">
+          <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
+            <span className="font-mono text-[9px] font-bold uppercase tracking-widest text-brand-purple">
+              AI
+            </span>
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-full bg-gradient-to-br from-brand-pink to-brand-purple flex items-center justify-center">
+                <span className="font-mono text-[8px] font-bold text-white">DR</span>
+              </div>
+              <div className="flex flex-col leading-tight">
+                <span className="font-mono text-[9px] font-bold text-black">Dr. Rebecca</span>
+                <span className="font-mono text-[7px] uppercase tracking-wider text-green-600">Online</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="px-5 py-3 border-b border-gray-100">
+            <span className="font-mono text-[8px] uppercase tracking-widest text-black/50">
+              Bright Horizons ABA
+            </span>
+          </div>
+
+          <div className="grid grid-cols-2 gap-px bg-gray-100">
+            {mobileStats.map((s) => (
+              <div key={s.label} className="bg-white px-4 py-4">
+                <p className="font-mono text-[8px] uppercase tracking-wider text-black/50 mb-1">
+                  {s.label}
+                </p>
+                <p className="font-serif text-2xl text-black leading-none mb-1">{s.value}</p>
+                <p className="font-mono text-[7px] uppercase tracking-wider text-black/40">
+                  {s.sub}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="px-5 py-4 border-t border-gray-100">
+            <p className="font-mono text-[8px] uppercase tracking-widest text-black/50 mb-3">
+              Active Patients
+            </p>
+            <div className="flex gap-2">
+              {patients.slice(0, 2).map((p) => (
+                <span
+                  key={p}
+                  className="w-8 h-8 rounded-full bg-gradient-to-br from-brand-pink/20 to-brand-purple/20 flex items-center justify-center font-mono text-[8px] font-bold text-black/70"
+                >
+                  {p}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex justify-between px-4 py-3 border-t border-gray-100 bg-[#FAFAFA]">
+            {mobileNav.map((n, i) => (
+              <span
+                key={n}
+                className={`font-mono text-[7px] uppercase tracking-wider ${
+                  i === 0 ? "text-brand-purple font-bold" : "text-black/40"
+                }`}
+              >
+                {n}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

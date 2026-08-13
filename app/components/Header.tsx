@@ -64,7 +64,7 @@ export default function Header() {
         rel="noopener noreferrer"
         className="hidden md:inline-block px-6 py-2.5 text-[10px] uppercase tracking-[0.2em] font-bold text-white rounded-md bg-gradient-to-r from-brand-pink to-brand-purple transition-all duration-300 shadow-md hover:shadow-[0_8px_20px_-4px_rgba(168,139,201,0.4)] hover:scale-[1.02]"
       >
-        Login
+        Login / Signup
       </a>
 
       {/* Mobile menu button */}

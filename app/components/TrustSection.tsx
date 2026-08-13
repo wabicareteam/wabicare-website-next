@@ -1,21 +1,25 @@
 import { ShieldIcon, PulseIcon, LockIcon } from "./icons";
 import { ReactNode } from "react";
 
+// Claims are deliberately defensible: WabiCare is BUILT FOR HIPAA (no
+// government HIPAA certification exists) and SOC 2 Type II is in progress
+// — see /security. Do not restore "SOC-2 Type II Certified" or an uptime
+// figure we do not measure and publish.
 const badges: { icon: ReactNode; title: string; subtitle: string }[] = [
   {
     icon: <ShieldIcon />,
-    title: "HIPAA Compliant",
+    title: "Built for HIPAA",
     subtitle: "End-to-end encryption",
   },
   {
     icon: <PulseIcon />,
-    title: "99.9% Uptime",
-    subtitle: "Distributed architecture",
+    title: "Cloud Native",
+    subtitle: "Azure-hosted infrastructure",
   },
   {
     icon: <LockIcon />,
-    title: "Bank-Grade Security",
-    subtitle: "SOC-2 Type II Certified",
+    title: "Enterprise Security",
+    subtitle: "Encrypted data at rest and in transit",
   },
 ];
 
@@ -63,7 +67,7 @@ export default function TrustSection() {
     >
       <div className="max-w-5xl mx-auto text-center pointer-events-auto">
         <h2 className="font-serif text-3xl md:text-4xl font-semibold lowercase mb-12 text-black">
-          Trusted by ABA Providers
+          Our Partners and Customers
         </h2>
 
         {/* Customer Logos */}

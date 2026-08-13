@@ -11,9 +11,9 @@ export default function HeroSection() {
       <section className="min-h-screen flex flex-col items-center justify-center px-8 md:px-12 relative pt-24 bg-[#FAFAFA]">
         <div className="text-center mb-12 pointer-events-none">
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light tracking-tight lowercase mb-6 text-black">
-            harmonizing
+            harmony in
             <br />
-            patient care
+            every session
           </h1>
           <p className="font-serif text-black/60 text-xl md:text-3xl max-w-2xl mx-auto">
             intelligent ABA practice management.

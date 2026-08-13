@@ -27,27 +27,27 @@ const featureGroups: FeatureGroup[] = [
     features: [
       {
         icon: <CalendarIcon />,
-        title: "Smart Scheduling",
+        title: "Scheduling",
         description:
-          "Provider availability, client preferences, authorization limits, and travel time — all factored into intelligent scheduling suggestions.",
+          "Manage provider schedules, appointments, and session coordination with calendar views and guardian visibility.",
       },
       {
         icon: <ChartIcon />,
         title: "Data Collection",
         description:
-          "DTT, task analysis, frequency, duration, interval, and ABC recording. Offline-first with automatic sync when connectivity returns.",
+          "DTT, task analysis, frequency, duration, interval, and ABC recording with 11 built-in data collection methods.",
       },
       {
         icon: <PulseIcon />,
         title: "Session Notes",
         description:
-          "Structured session documentation with auto-populated data summaries. Convert sessions to billable claims in one click.",
+          "AI-powered session documentation with auto-populated data summaries. Convert sessions to billable claims in one click.",
       },
       {
         icon: <UsersIcon />,
         title: "Treatment Planning",
         description:
-          "Build and manage treatment plans with goal libraries, baseline tracking, and mastery criteria configuration.",
+          "Build and manage treatment plans with a comprehensive program builder, goal libraries, and mastery criteria.",
       },
     ],
   },
@@ -69,15 +69,15 @@ const featureGroups: FeatureGroup[] = [
       },
       {
         icon: <PlusCircleIcon />,
-        title: "Clearinghouse Integration",
+        title: "Billing Configuration",
         description:
-          "Direct connections to major clearinghouses for electronic claims submission and remittance processing.",
+          "Configure clearinghouses, payers, CPT codes, provider credentials, and billing defaults from one settings panel.",
       },
       {
         icon: <ChartIcon />,
         title: "Revenue Analytics",
         description:
-          "Dashboard views of collection rates, aging reports, payer mix, and revenue trends across your practice.",
+          "Dashboard views of collection rates, AR aging reports, payer mix, denial trends, and monthly revenue.",
       },
     ],
   },
@@ -89,25 +89,25 @@ const featureGroups: FeatureGroup[] = [
         icon: <UsersIcon />,
         title: "Guardian Portal",
         description:
-          "Parents view progress, sign documents, manage schedules, and communicate with the clinical team through a secure portal.",
+          "Parents view progress, sign documents, submit intake forms, and communicate with the clinical team through a secure portal.",
       },
       {
         icon: <LockIcon />,
         title: "Staff Management",
         description:
-          "Credentialing, onboarding checklists, certification tracking, and role-based permissions for your entire team.",
+          "Employee and manager portals, onboarding checklists, org chart, rewards, and role-based permissions for your team.",
       },
       {
         icon: <PulseIcon />,
-        title: "Telehealth",
+        title: "Training & LMS",
         description:
-          "HIPAA-compliant video with integrated data collection for remote supervision, parent training, and direct services.",
+          "Course catalog, lesson delivery, quizzes, certification tracking, and CEU management for ongoing staff development.",
       },
       {
         icon: <ShieldIcon />,
-        title: "Compliance Dashboard",
+        title: "EVV & Compliance",
         description:
-          "Track HIPAA training, supervision hours, certification renewals, and organizational compliance in one view.",
+          "Electronic visit verification with check-in/check-out tracking, audit trails, and certification renewal monitoring.",
       },
     ],
   },

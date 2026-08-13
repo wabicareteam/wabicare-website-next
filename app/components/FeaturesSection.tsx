@@ -12,19 +12,19 @@ const features = [
     icon: <CalendarIcon />,
     title: "Session Scheduling",
     description:
-      "Intelligent calendar matrices with automated conflict resolution and guardian synchronization.",
+      "Manage provider schedules, appointments, and session coordination with guardian visibility.",
   },
   {
     icon: <ChartIcon />,
     title: "Data Collection",
     description:
-      "Real-time skill acquisition and behavior reduction tracking with offline-first capabilities.",
+      "Real-time skill acquisition and behavior reduction tracking across DTT, task analysis, frequency, duration, and ABC recording.",
   },
   {
     icon: <DollarIcon />,
     title: "Billing Engine",
     description:
-      "Automated 837P generation, clearinghouse integration, and comprehensive revenue cycle management.",
+      "Automated 837P generation, ERA processing, authorization tracking, and comprehensive revenue cycle management.",
   },
   {
     icon: <UsersIcon />,

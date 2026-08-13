@@ -13,58 +13,58 @@ import {
 
 const capabilities = [
   {
-    icon: <UsersIcon />,
-    title: "IEP Goal Tracking",
+    icon: <ChartIcon />,
+    title: "Behavioral Data Collection",
     description:
-      "Map IEP objectives directly to data collection targets. Track progress across domains with visual timelines for annual reviews.",
+      "Frequency, duration, DTT, task analysis, interval, and ABC recording — the same clinical-grade tools used in ABA clinics.",
   },
   {
-    icon: <ChartIcon />,
-    title: "Behavior Intervention",
+    icon: <PulseIcon />,
+    title: "Student Progress Tracking",
     description:
-      "Implement and monitor BIPs with real-time frequency, duration, and ABC data collection across classrooms.",
+      "Track skill acquisition and behavior reduction across students with visual progress reporting for team reviews.",
   },
   {
     icon: <CalendarIcon />,
     title: "Service Scheduling",
     description:
-      "Coordinate related services, pull-out sessions, and push-in support across multiple classrooms and providers.",
+      "Coordinate provider schedules, session appointments, and service delivery across your school or district.",
   },
   {
     icon: <ShieldIcon />,
-    title: "FERPA Compliant",
+    title: "Built for HIPAA",
     description:
-      "Student data isolation, role-based access, and audit logging designed for educational privacy requirements.",
+      "Role-based access control, data isolation, and audit logging to protect student information.",
   },
   {
-    icon: <PulseIcon />,
-    title: "Progress Reporting",
+    icon: <UsersIcon />,
+    title: "AI-Powered Session Notes",
     description:
-      "Auto-generate progress reports aligned to IEP timelines. Share securely with parents and district administrators.",
+      "Generate structured session documentation with AI assistance. Reduce note-writing time while maintaining clinical quality.",
   },
   {
     icon: <LockIcon />,
-    title: "District Integration",
+    title: "Parent Communication",
     description:
-      "Connect with existing SIS and special education platforms. Streamline data flow between classroom and administration.",
+      "Secure parent portal for sharing progress updates, intake forms, and documents with families.",
   },
 ];
 
 const audiences = [
-  {
-    title: "Special Education Directors",
-    description:
-      "District-wide visibility into service delivery, compliance timelines, and student outcomes across all schools.",
-  },
   {
     title: "BCBAs in Schools",
     description:
       "Clinical-grade data collection tools designed for the unique constraints of school-based ABA services.",
   },
   {
-    title: "Paraprofessionals & RBTs",
+    title: "RBTs & Paraprofessionals",
     description:
-      "Simple, intuitive interfaces for consistent data collection. Works offline for classrooms without reliable WiFi.",
+      "Simple, intuitive interfaces for consistent data collection across session types and classroom settings.",
+  },
+  {
+    title: "Program Administrators",
+    description:
+      "Visibility into service delivery, session documentation, and provider schedules across your program.",
   },
 ];
 
@@ -73,7 +73,7 @@ export default function SchoolsPage() {
     <>
       <PageHero
         title="ABA services in schools"
-        subtitle="clinical-grade tools adapted for the school environment."
+        subtitle="clinical-grade tools for school-based behavioral services."
         cta={{ label: "Schedule a Walkthrough", href: "/#contact" }}
       />
 
@@ -83,7 +83,7 @@ export default function SchoolsPage() {
           <div className="mb-20">
             <SectionHeader
               label="School Modules"
-              title="Designed for the Classroom"
+              title="Clinical Tools for the Classroom"
               centered
             />
           </div>
@@ -136,7 +136,7 @@ export default function SchoolsPage() {
             bring clinical rigor to your school
           </h2>
           <p className="font-mono text-[10px] font-medium uppercase tracking-wider text-black/60 leading-loose mb-12">
-            WabiCare adapts ABA best practices for school settings — FERPA compliant, offline-ready, and built for team collaboration.
+            WabiCare brings ABA best practices to school settings — built for HIPAA, built for team collaboration.
           </p>
           <GradientButton href="/">Get Started</GradientButton>
         </div>
