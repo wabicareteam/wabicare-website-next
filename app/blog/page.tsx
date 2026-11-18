@@ -1,4 +1,5 @@
 import Link from "next/link";
+import NewsletterForm from "../components/NewsletterForm";
 import PageHero from "../components/PageHero";
 import SectionHeader from "../components/SectionHeader";
 
@@ -157,16 +158,7 @@ export default function BlogPage() {
           <p className="font-mono text-[10px] font-medium uppercase tracking-wider text-black/60 leading-loose mt-6 mb-10">
             Clinical insights, product updates, and industry news delivered to your inbox. No spam, unsubscribe anytime.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="YOUR EMAIL ADDRESS"
-              className="flex-grow px-6 py-4 text-[10px] font-mono uppercase tracking-widest bg-[#FAFAFA] rounded-md border border-gray-100 focus:outline-none focus:ring-2 focus:ring-brand-purple/30 transition-all duration-300"
-            />
-            <button className="px-8 py-4 text-[10px] uppercase tracking-[0.2em] font-bold text-white rounded-md bg-gradient-to-r from-brand-pink to-brand-purple transition-all duration-300 shadow-md hover:shadow-[0_8px_20px_-4px_rgba(168,139,201,0.4)] hover:scale-[1.02] cursor-pointer whitespace-nowrap">
-              Subscribe
-            </button>
-          </div>
+          <NewsletterForm />
         </div>
       </section>
     </>

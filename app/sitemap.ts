@@ -9,7 +9,7 @@ const BASE = "https://wabicare.com";
 // The previous deployment had no sitemap: /sitemap.xml fell through to the
 // homepage, so search engines never received a map of the site.
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/clinics", "/schools", "/features", "/blog", "/security", "/privacy", "/terms", "/cookies"];
+  const routes = ["", "/clinics", "/schools", "/features", "/blog", "/faq", "/hipaa", "/security", "/privacy", "/terms", "/cookies"];
   return [
     ...routes.map((r) => ({
       url: `${BASE}${r}`,

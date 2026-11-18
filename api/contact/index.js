@@ -1,11 +1,14 @@
 /**
- * POST /api/contact — demo requests from the website's 4-step wizard.
+ * POST /api/contact — demo requests (4-step wizard) and newsletter signups.
  *
  * History: the site shipped with this route referenced by the front end but
  * no API deployed, so Azure answered 500 "Backend call failure" while the
  * client swallowed the error and showed "message received". Every lead was
  * lost. This function is the missing half; the client now also surfaces
  * failures instead of faking success.
+ *
+ * A body with `source: "newsletter"` is a newsletter signup (email only);
+ * anything else is a demo request (name + email required).
  *
  * Delivery uses Azure Communication Services — the same email path the
  * clinical backend already uses in production. Configuration comes from
@@ -41,20 +44,25 @@ const trim = (v, max) => String(v == null ? "" : v).trim().slice(0, max);
 
 module.exports = async function (context, req) {
   const body = req.body || {};
+  const isNewsletter = trim(body.source, 40) === "newsletter";
 
   const lead = {};
   for (const [key] of FIELDS) {
     lead[key] = trim(body[key], key === "message" ? 4000 : 200);
   }
 
-  // Minimal validation — enough to reject junk without frustrating a
-  // legitimate prospect who left optional answers blank.
+  // Validation. Demo requests need a name + email; newsletter signups need
+  // only a valid email, so a visitor is never blocked for leaving the rest.
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(lead.email);
-  if (!lead.name || !emailOk) {
+  if (!emailOk || (!isNewsletter && !lead.name)) {
     context.res = {
       status: 400,
       headers: { "Content-Type": "application/json" },
-      body: { error: "A name and a valid email address are required." },
+      body: {
+        error: isNewsletter
+          ? "A valid email address is required."
+          : "A name and a valid email address are required.",
+      },
     };
     return;
   }
@@ -65,8 +73,7 @@ module.exports = async function (context, req) {
 
   if (!connectionString || !sender) {
     // Fail loudly rather than pretending: an unconfigured deployment must
-    // not report success to a prospect. The client shows its mailto
-    // fallback when it sees a non-2xx response.
+    // not report success. The client shows its mailto fallback on non-2xx.
     context.log.error(
       "Lead delivery not configured — missing ACS connection string or sender."
     );
@@ -77,6 +84,10 @@ module.exports = async function (context, req) {
     };
     return;
   }
+
+  const heading = isNewsletter
+    ? "New newsletter signup — wabicare.com"
+    : "New demo request — wabicare.com";
 
   const rows = FIELDS.filter(([k]) => lead[k])
     .map(
@@ -90,10 +101,12 @@ module.exports = async function (context, req) {
     .join("");
 
   const html = `<div style="font-family:sans-serif">
-    <h2 style="font:600 18px sans-serif;color:#111">New demo request — wabicare.com</h2>
+    <h2 style="font:600 18px sans-serif;color:#111">${esc(heading)}</h2>
     <table style="border-collapse:collapse;margin-top:12px">${rows}</table>
     <p style="font:12px sans-serif;color:#777;margin-top:20px">
-      Reply directly to ${esc(lead.email)} to reach this prospect.
+      Reply directly to ${esc(lead.email)} to reach this ${
+    isNewsletter ? "subscriber" : "prospect"
+  }.
     </p>
   </div>`;
 
@@ -101,18 +114,18 @@ module.exports = async function (context, req) {
     .map(([k, label]) => `${label}: ${lead[k]}`)
     .join("\n");
 
+  const subject = isNewsletter
+    ? "Newsletter signup — wabicare.com"
+    : `Demo request — ${lead.organization || lead.name}`;
+
   try {
     const { EmailClient } = require("@azure/communication-email");
     const client = new EmailClient(connectionString);
     const poller = await client.beginSend({
       senderAddress: sender,
       recipients: { to: [{ address: to }] },
-      content: {
-        subject: `Demo request — ${lead.organization || lead.name}`,
-        plainText: plain,
-        html,
-      },
-      replyTo: [{ address: lead.email, displayName: lead.name }],
+      content: { subject, plainText: plain, html },
+      replyTo: [{ address: lead.email, displayName: lead.name || lead.email }],
     });
     await poller.pollUntilDone();
 

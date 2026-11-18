@@ -27,11 +27,14 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-end gap-2 font-mono text-[9px] text-black/50 uppercase tracking-widest font-medium">
           <span>WabiCare Global Systems</span>
           <span>&copy; 2026 All Rights Reserved</span>
-          <div className="flex gap-4 mt-2">
+          <a href="mailto:info@wabicare.com" className="mt-1 normal-case tracking-normal hover:text-brand-purple transition-colors">info@wabicare.com</a>
+          <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2 justify-center md:justify-end">
+            <Link href="/faq" className="hover:text-brand-purple transition-colors">FAQ</Link>
+            <Link href="/hipaa" className="hover:text-brand-purple transition-colors">HIPAA / BAA</Link>
+            <Link href="/security" className="hover:text-brand-purple transition-colors">Security</Link>
             <Link href="/privacy" className="hover:text-brand-purple transition-colors">Privacy</Link>
             <Link href="/terms" className="hover:text-brand-purple transition-colors">Terms</Link>
             <Link href="/cookies" className="hover:text-brand-purple transition-colors">Cookies</Link>
-            <Link href="/security" className="hover:text-brand-purple transition-colors">Security</Link>
           </div>
         </div>
       </div>
