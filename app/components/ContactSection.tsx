@@ -33,6 +33,7 @@ interface FormState {
   email: string;
   organization: string;
   message: string;
+  website: string; // honeypot
 }
 
 const EMPTY: FormState = {
@@ -44,6 +45,7 @@ const EMPTY: FormState = {
   email: "",
   organization: "",
   message: "",
+  website: "",
 };
 
 export default function ContactSection() {
@@ -156,6 +158,17 @@ export default function ContactSection() {
           </div>
         </div>
 
+        {/* honeypot — hidden from humans, bots fill it */}
+        <input
+          type="text"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          value={form.website}
+          onChange={(e) => set("website", e.target.value)}
+          style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+        />
         <div className="min-h-[280px]">
           {step === 0 && (
             <div>

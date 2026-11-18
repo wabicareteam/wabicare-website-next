@@ -42,3 +42,7 @@ next-env.d.ts
 
 # build output
 /out/
+
+# terraform local cache
+infra/.terraform/
+infra/*.tfstate*

@@ -16,7 +16,7 @@ const blocks: Block[] = [
   { tag: "li", text: "Workforce training on HIPAA Privacy and Security" },
   { tag: "li", text: "Breach notification procedures compliant with HIPAA and HITECH" },
   { tag: "li", text: "HIPAA risk assessment conducted and documented" },
-  { tag: "p", text: "Request a BAA: hello@wabicare.com" },
+  { tag: "p", text: "Request a BAA: info@wabicare.com" },
   { tag: "h2", text: "Infrastructure" },
   { tag: "li", text: "Hosted on Microsoft Azure— HIPAA-eligible services under Microsoft’s BAA" },
   { tag: "li", text: "Azure Static Web Apps with global CDN for marketing content" },
@@ -42,14 +42,14 @@ const blocks: Block[] = [
   { tag: "h2", text: "Monitoring & Incident Response" },
   { tag: "li", text: "Continuous logging and monitoring of authentication, API, and data access" },
   { tag: "li", text: "Documented incident response and breach notification runbook" },
-  { tag: "li", text: "Responsible disclosure for security researchers: security@wabicare.com" },
+  { tag: "li", text: "Responsible disclosure for security researchers: info@wabicare.com" },
   { tag: "h2", text: "Certifications & Audits" },
   { tag: "li", text: "SOC 2 Type II — in progress. Timeline: audit readiness assessment 2026; Type I report targeted Q4 2026; Type II report 2027." },
   { tag: "li", text: "HIPAA — no government certification exists for HIPAA; we operate under self-attestation and can provide documentation of our Security Rule controls upon request." },
   { tag: "h2", text: "Subprocessors" },
   { tag: "p", text: "A current list of subprocessors that may process Customer Data (including Microsoft Azure as our primary infrastructure provider) is available on request. Each subprocessor is vetted, bound by contract, and where applicable, has executed a BAA." },
   { tag: "h2", text: "Contact" },
-  { tag: "p", text: "Security questions, compliance documentation requests, or BAA requests:security@wabicare.com" }
+  { tag: "p", text: "Security questions, compliance documentation requests, or BAA requests:info@wabicare.com" }
 ];
 
 export default function Page() {

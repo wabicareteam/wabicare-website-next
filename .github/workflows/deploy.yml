@@ -1,12 +1,11 @@
 name: Deploy wabicare.com
 
-# MANUAL ONLY for now. The site was previously deployed by hand with the SWA
-# CLI, which is how its source was lost. Once the owner has approved the
-# restored build, add the push trigger below so main always matches live:
-#
-#   push:
-#     branches: [main]
+# Deploys on merge to main (and manually via the Actions tab). The build is
+# a Next.js static export; the managed function in `api/` delivers leads and
+# newsletter signups via Azure Communication Services.
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -36,6 +35,6 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           action: upload
           app_location: "/"      # Next.js app root
-          api_location: "api"    # managed function that delivers demo requests
+          api_location: "api"    # managed function that delivers demo + newsletter requests
           output_location: "out" # `output: export` target
           skip_app_build: true   # already built above

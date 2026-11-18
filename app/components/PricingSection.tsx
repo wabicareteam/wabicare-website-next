@@ -55,6 +55,9 @@ export default function PricingSection() {
           <h2 className="font-serif text-4xl md:text-5xl font-light lowercase text-black">
             Scalable Infrastructure
           </h2>
+          <p className="font-mono text-[10px] font-medium uppercase tracking-wider text-black/60 leading-loose mt-6 max-w-xl mx-auto">
+            Custom pricing for your team size &mdash; request a quote below and we&apos;ll send one within 24 hours.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full pointer-events-auto items-stretch">
