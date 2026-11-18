@@ -44,6 +44,18 @@ const trim = (v, max) => String(v == null ? "" : v).trim().slice(0, max);
 
 module.exports = async function (context, req) {
   const body = req.body || {};
+
+  // Honeypot: `website` is a hidden field no human sees. If it is filled, the
+  // request is a bot — accept silently (200) so the bot can't tell it was
+  // dropped, and send nothing.
+  if (trim(body.website, 200)) {
+    context.res = {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+      body: { ok: true },
+    };
+    return;
+  }
   const isNewsletter = trim(body.source, 40) === "newsletter";
 
   const lead = {};

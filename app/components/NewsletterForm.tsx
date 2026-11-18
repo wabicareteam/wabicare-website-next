@@ -6,6 +6,7 @@ const LEADS_EMAIL = "info@wabicare.com";
 
 export default function NewsletterForm() {
   const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState(""); // honeypot
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">(
     "idle"
   );
@@ -20,7 +21,7 @@ export default function NewsletterForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, source: "newsletter" }),
+        body: JSON.stringify({ email, website, source: "newsletter" }),
       });
       if (!res.ok) throw new Error(`Subscribe endpoint returned ${res.status}`);
       setStatus("done");
@@ -48,6 +49,17 @@ export default function NewsletterForm() {
       className="flex flex-col gap-3 max-w-md mx-auto"
       noValidate
     >
+      {/* honeypot — hidden from humans, bots fill it */}
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        value={website}
+        onChange={(e) => setWebsite(e.target.value)}
+        style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+      />
       <div className="flex flex-col sm:flex-row gap-4">
         <input
           type="email"

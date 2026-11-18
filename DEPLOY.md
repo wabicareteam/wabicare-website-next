@@ -34,6 +34,9 @@ shows **no destroys** before applying.
 
 ```bash
 cd infra
+# one-time: create the remote-state container (state holds the ACS/SWA secrets)
+az storage container create --account-name stterraformstate5ntotxmx \
+  --name terraform-state-website --auth-mode login
 terraform init
 
 # Adopt the existing hand-created resources (skip any already in state):
